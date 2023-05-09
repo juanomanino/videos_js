@@ -19,3 +19,13 @@ buttons.forEach((item)=>{
         }
     }
 })
+
+const themeTogglerBtn = document.querySelector(".theme-toggler");
+const calculator= document.querySelector(".calculator");
+
+let isDark=true;
+themeTogglerBtn.onclick=()=>{
+    calculator.classList.toggle("dark");
+    themeTogglerBtn.classList.toggle("active");
+    isDark = !isDark;
+}

@@ -5,7 +5,8 @@
     font-family: sans-serif;
 }
 body{
-    background: linear-gradient(45deg,#f06291, #fffde7);
+    background: linear-gradient(45deg,#4761a8, #00aa41);
+    
 }
 .container{
     height: 100vh;
@@ -21,9 +22,9 @@ body{
     width: auto;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 30px rgb(187, 130, 130);
+    box-shadow: 0 0 50px rgb(243, 128, 61);
     background-color: #fff;
-}
+
     #display{
         color: #0a1e23;
         margin: 0 10px;
@@ -35,13 +36,11 @@ body{
         font-size: 30px;
         margin-bottom: 20px;
         font-weight: 800;
-
     }
     #equal{
         height: 130px;
-
     }
-    button#clear{
+    #clear{
         background-color: #ffd5d8;
         color: #fc4552;
     }
@@ -52,18 +51,39 @@ body{
     .btn-operator{
         background-color: #ffd0fb ;
         color: #f967f3;
-
+        
     }
     .btn-equal{
         background-color: #adf9e7 ;
         color: #000;
-
+        
     }
     &.dark{
         background-color: #1B1B1B;
-
-    
-    }
+        #display{
+            color: #f8fafb
+        }
+        #clear{
+            background-color:#4C35AA;
+            color: white;
+        }
+        .btn-number{
+            background-color:#8EFDA6;
+            color: black;
+            font-weight: 600;
+        }
+        .btn-operator{
+            background-color: #F0DB4F ;
+            color: #aa00a4;
+            
+        }
+        .btn-equal{
+            background-color: #F23B00 ;
+            color: #ffffff;
+            
+        }
+    }     
+}
     
 .theme-toggler{
     position: absolute;
@@ -72,20 +92,20 @@ body{
     color: #fff;
     cursor: pointer;
     z-index: 1;
-
-}
     &::before{
-        content: "";
+        content: '';
+        position: absolute;
         height: 30px;
         width: 30px;
         top: 50%;
         transform: translate(-50%, -50%);
-        border-radius: 50;
+        border-radius: 50%;
         background-color: #333;
         z-index: -1;
         
     }
-.theme-toggler .active{
+}
+.theme-toggler.active{
     color: #333;
     &::before{
         background-color: #fff;
