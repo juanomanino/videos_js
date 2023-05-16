@@ -12,13 +12,20 @@
         <div class="menuToggle">
 
         </div>
+        <!-- Lista -->
         <ul>
+            <!-- Se le da un estado activo solo a esta parte de la lista. Se agrega un estilo, con una variable de css se da el color-->
             <li class="list active" style="--clr:#f44336;">
+                <!-- El a es un link para poder navegar por las opciones -->
                 <a href="#">
+                    <!-- El icono usando un span -->
                     <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <!-- El ion-icon permite acceder a los iconos de la página.Abajo otro span para el texto -->
                     <span class="text">Home</span>
                 </a>
             </li>
+
+            <!-- Este li ya no está en un estado activo. A cada li se da un color y su propio ícono y  nombre. Cada icono esta en una clase compartida "icon", al igual que los titulos, en "text" -->
             <li class="list" style="--clr:#ffa117;">
                 <a href="#">
                     <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
@@ -47,7 +54,9 @@
         </ul>
 
     </div>
-    
+
+
+    <!-- Modulos para acceder a los íconos del menú mediante la red. -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="./script.js"></script>

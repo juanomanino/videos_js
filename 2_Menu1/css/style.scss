@@ -1,28 +1,42 @@
+// Se importa el tipo de letra de google fonts
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
 
+//Establecemos las medidas generales de la página
 *{
     margin:0 ;
     padding: 0;
     box-sizing: border-box;
+    //Se puede usar Poppins por haberla importado antes
     font-family: 'Poppins', sans-serif;
 }
 body{
     background: #3d4152;
 }
 
+// Clase de navigation
 .navigation{
+    // Para que no se mueva la barra
     position: fixed;
+    //Posicionamiento de izquierda, derecha, arriba y abajo
     inset: 20px 0 20px 20px;
     width: 75px;
     background:#fff ;
+
+    //Transicion para la animacion posterior
     transition: 0.5s;
+
+    //Que sea flexible, justificamos y centramos el contenido
     display: flex;
     justify-content: center;
     align-items: center;
+
+    //Bordes redondos
     border-radius: 15px;
 
     .menuToggle{
+        // Que busque la posicion del padre directo
         position: absolute;
+        //PAra que esten lo más pegados posible a arriba y a la izquierda
         top: 0;
         left: 0;
         width: 100%;
@@ -33,50 +47,69 @@ body{
         align-items: center;
         justify-content: flex-start;
         padding: 0 23px;
-
+        //Decorador antes de
         &::before{
             content: '';
             position: absolute;
             width:30px ;
             height: 2px;
             background: #333;
+            //Trasladar 8 pixeles en el eje Y negativo
             transform: translateY(-8px);
             transition: 0.5s;
         }
+        //Decorador despues de
+
         &::after{
             content: '';
             position: absolute;
             width:30px ;
             height: 2px;
             background: #333;
+            //Trasladar 8 pixeles en el eje Y positivo
+
             transform: translateY(8px);
             transition: 0.5s;
+            //Sombra alrededor de la caja
             box-shadow: 0 -8px 0 #333;
         }
     }
     ul{
         display: flex;
+        // Organizar el contenido flex en columna, no en filas
         flex-direction: column;
+
+        //Separacion entre elementos
         gap: 10px;
         width: 100%;
+        //Estilos a cada elemento li
         li{
             list-style: none;
             position: relative;
             width: 100%;
             height: 60px;
+
+            //Relleno para que no esten pegados a los bordes
             padding: 0 10px;
             transition: 0.5s ;
+
+            //Propiedad active
             &.active{
+                //Cuando esta active, se traslada a la derecha 30px
                 transform: translateX(30px);
                 a{
                     .icon{
+                        //Volver el icono blanco
                         color: #fff;
+
+                        //El color de fondo sera el mismo color de ese a en especifico
                         background:var(--clr) ;
                         &::before{
                             opacity: 0.5;
 
                         }
                     }
+                    //Toma el color de la variable para el texto
                     .text{
                         color:var(--clr) ;
                     }
@@ -93,11 +126,17 @@ body{
                 .icon{
                     position: relative;
                     display: block;
+                    //Ancho y largo dela cajita del icono
                     min-width: 55px;
                     height: 55px;
+                    //Linea de altura se cambia para centrarlo
                     line-height: 60px;
+
                     transition: 0.5s;
+                    //Curvatura al cuadro
                     border-radius: 10px;
+
+                    //Agrandar el icono, que se comporta como texto
                     font-size: 1.75em;
                     color: #222;
                     &::before{
@@ -107,7 +146,11 @@ body{
                         left: 0;
                         width: 100%;
                         height: 100%;
+
+                        // Hace que todos los demas li tomen las mismcas caracteristicas
                         background: var(--clr);
+
+                        //Difuminado
                         filter: blur(8px);
                         opacity: 0;
                         transform: 0.5s;
@@ -115,12 +158,14 @@ body{
                 }
                 .text{
                     position: relative;
+                    //Separacion del texto
                     padding: 0 15px;
                     height: 60px;
                     display: flex;
                     align-items: center ;
                     color: #333;
-                    opacity: 0;
+                    opacity: 0; 
+                    // esconde los textos no active 
                     visibility: hidden;
                     transition: 0.5s;
                     
@@ -128,9 +173,11 @@ body{
             }
         }
     }
+    //Clase open creada desde JS
     &.open .menuToggle::before{
         transform: translateY(0px) rotate(45deg);
     }
+    //Cuando se active open, el ancho sera 250px
     &.open{
         width: 250px;
 
@@ -140,10 +187,13 @@ body{
         box-shadow: 0 0 0 #333;
 
     }
+    //Busca el active,y la traslade 10 px en x positivo
     &.open ul li.active{
         transform: translateX(10px);
 
     }
+
+    // Accedemos a los links a, a su texto, y muestra los textos con la opacidad 1 y haciendolo visible
     &.open ul li a .text{
         opacity: 1;
         visibility: visible;

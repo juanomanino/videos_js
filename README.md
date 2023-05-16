@@ -24,8 +24,10 @@
 # Proyecto 3
 
 
-![Evidencia](./2_Menu1/img/menu1.png "Evidencia")
+![Evidencia](./3_Toggle/img/toggle1.png "Evidencia")
 
-![Evidencia](./2_Menu1/img/menu2.png "Evidencia")
+![Evidencia](./3_Toggle/img/toggle2.png "Evidencia")
 
-![Evidencia](./2_Menu1/img/menu3.png "Evidencia")
+![Evidencia](./3_Toggle/img/toggle3.png "Evidencia")
+
+![Evidencia](./3_Toggle/img/toggle4.png "Evidencia")
