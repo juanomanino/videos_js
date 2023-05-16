@@ -16,14 +16,19 @@ body{
 }
 .container{
     position: relative;
+    // Ancho y alto en cero al principio
     width: 0px;
     height: 0px;
     background: #37444b;
+    // Hijos flexibles y alineados
     display: flex;
     align-items: center;
     justify-content: center;
+
+    //Bordes redondeados y que se expanda con una transición de 0.5s
     border-radius: 25px;
     transition: 0.5s;
+    //Decorador para la palanca
     &::before{
         content: '';
         position: absolute;
@@ -32,6 +37,7 @@ body{
         height: 40px;
         background: #37444b;
         border-radius: 5px;
+        // Invisible y que rote 45 grados, con transición de 0.5 segundos
         opacity: 0;
         transform: rotate(45deg);
         transition: 0.5s;
@@ -41,8 +47,10 @@ body{
         min-width: 400px;
         padding: 40px;
         color: #fff;
+        //Opacidad cero
         opacity: 0;
         transition: 0.5s;
+        //Escala de cero
         transform: scale(0);
 
     }
@@ -52,34 +60,38 @@ body{
         min-width: 60px;
         height: 60px;
         background: #0bcf9c;
+        //Para hacerlo circulo, que cambie el cursor y los hijos sean flexibles y centrados.
         border-radius: 50%;
         cursor: pointer;
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: 0.5s;
+        transition: 0.5s;// transicion para la animacion
         &::before{
+            //Antes tenga un simbolo +,de tamaño 2.5em y color blanco
             content: '+';
             font-size: 2.5em;
             color: #fff;
         }
     }
-    &.active .content{
+    &.active .content{//Al activarse el toggle, el content pone opacidad 1, la transicion tarda 0.5s en mostrarse y la escala se vuelve 1. Sirve para que aparezca el texto con una transición
         opacity: 1;
         transition-delay: 0.5s;
         transform: scale(1);
-
     }
-    &.active .toggleBtn{
+
+    &.active .toggleBtn{ //Sirve para mover el botón.El bottom hace que baje, transform lo rota a la posición de X y cambia el color a rojo.
         bottom: -90px;
         transform: rotate(135deg);
         background:#ff5a57   ;
     }
-    &.active{
+
+    &.active{// En la clase principal active, se usa el decorador para ponerle opacidad 1.
         &::before{
             opacity: 1;
             transition-delay: 0.5s;
         }
+        // Aumenta el tamaño de la caja de fondo a un cuadrado con una transición con cierta tardanza.
         width: 400px;
         height: 400px;
         transition-delay: 0.5s;
