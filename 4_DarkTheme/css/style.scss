@@ -1,52 +1,54 @@
-*{
+*{ //Establecemos los margenes, relleno y comportamiento de ancho y largo en toda la página
     margin:0 ;
     padding:0 ;
     box-sizing: border-box;
 }
 
-body{
+body{//Damos estilo al body, con su color de fondo. Que los hijos sean flexibles
     background:#2b2b2b;
     display: flex;
     justify-content:center ;
     align-items: center;
-    flex-direction: column;
-    min-height:100vh ;
-    transition: 0.5s;
-    &.active{
+    flex-direction: column;//Que los elementos se organizen en columna, se justifiquen y se centren
+    min-height:100vh ;//Adaptar al altura a tamaño del navegador
+    transition: 0.5s;//Transicion para el cambio de color
+    &.active{// Cuando pasa a On,el fondo cambia a otro color
         background: #6cbdff;
 
     }
 }
 
-#toggle{
+#toggle{//Tomamos el toggle.
     position: relative;
-    display: block;
-    width: 320px;
+    display: block;// Que se muestre como bloque
+    width: 320px;// Definimos ancho y alto,el border radius de 160px para que los bordes sean bien redondeados
     height: 160px;
     border-radius: 160px;
-    background: #222;
+    background: #222;//Color de fondo para que se vea
     transition: 0.5s;
+    //Sombreado interno para el toggle. Asi queda como difuminadoy decorado. Inset para que sea por adentro
     box-shadow: inset 0 8px 60px rgba(0,0,0, 0.1), inset 0 8px 8px  rgba(0,0,0, 0.1), inset 0 -4px 4px rgba(0,0,0, 0.1);
 
-    .indicator{
-        position: absolute;
+    .indicator{//Ahora el decorador
+        position: absolute;//Posicion ajustada al padre
         top: 0;
-        left: 0;
+        left: 0;// Que se posicione en 0 a la izquierda y arribar
         width:160px ;
-        height: 160px;
+        height: 160px;// Mismas medidasdel toggle para que encaje y se vea bien
         border-radius: 50%;
-        background: linear-gradient(to bottom, #444, #222);
+        background: linear-gradient(to bottom, #444, #222);// Fondo gradiente para que se vea bonito
         cursor: pointer;
-        transform: scale(0.9);
+        transform: scale(0.9);//Bajamos la escala para que se haga un poco más  pequeño
+        //Sombreado interno y externo del decorador
         box-shadow: 0 8px 40px rgba(0,0,0, 0.5), inset 0 4px 4px  rgba(255,255,255, 0.2), inset 0 -4px 4px rgba(255,255,255, 0.2);
         transition: 0.5s;
     }
-    &.active{
+    &.active{//Cuando se active, cambiamos el fondo del toggle, y su sombreado. Ademas, modificamos la posicion de la circunferencia, su color de fondo y sombreado
         background: #fff;
         box-shadow: inset 0 2px 60px rgba(0,0,0, 0.1), inset 0 2px 8px  rgba(0,0,0, 0.1), inset 0 -4px 8px rgba(255,255,255, 0.05);
         .indicator{
             left: 160px;
-            box-sizing:0 8px 20px rgba(0,0,0, 0.1), inset 0 4px 4px  rgba(255,255,255, 1), inset 0 -4px 4px rgba(255,255,255, 1);
+            box-shadow:0 8px 20px rgba(0,0,0, 0.1), inset 0 4px 4px  rgba(255,255,255, 1), inset 0 -4px 4px rgba(255,255,255, 1);
             background: linear-gradient(to bottom, #eaeaea, #f9f9f9);
 
         }
