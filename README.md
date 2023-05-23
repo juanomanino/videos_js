@@ -36,7 +36,12 @@
 # Proyecto 4
 
 
-![Evidencia](./4_DarkTheme/img/dark1.png "Evidencia")
+![Evidencia](./5_Menu2/img/kfc1.png "Evidencia")
 
-![Evidencia](./4_DarkTheme/img/dark2.png "Evidencia")
+![Evidencia](./5_Menu2/img/kfc2.png "Evidencia")
+
+![Evidencia](./5_Menu2/img/kfc3.png "Evidencia")
+
+![Evidencia](./5_Menu2/img/kfc4.png "Evidencia")
+
 
